@@ -1,0 +1,118 @@
+<!Doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <title>管理员</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .daohang {
+            width: 100%;
+            background-image: url(images/background.jpg);
+            font-family: FZShuTi;
+            font-size: 40px;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        .menu {
+            font-family: "黑体";
+            width: 100%;
+            /* margin-left: 2px; */
+            margin-top: -40px;
+            position: fixed;
+        }
+        
+        .menu ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .menu ul li {
+            float: left;
+            position: relative;
+        }
+        
+        .menu ul li a,
+        .menu ul li a:visited {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            width: 256px;
+            height: 40px;
+            color: #000;
+            border: 1px solid #fff;
+            border-width: 1px 1px 0 0;
+            background: rgb(89, 202, 89);
+            line-height: 40px;
+            font-size: 14px;
+        }
+        
+        .menu ul li:hover a {
+            color: #fff;
+        }
+        
+        .menu ul li ul {
+            display: none;
+        }
+        
+        .menu ul li:hover ul {
+            display: block;
+            position: absolute;
+            top: 31px;
+            left: 0px;
+            width: 105px;
+        }
+        
+        menu ul li:hover ul li a {
+            display: block;
+            background: #ff4321;
+            color: #000;
+        }
+        
+        .menu ul li:hover ul li a:hover {
+            background: #dfc184;
+            color: #000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="daohang">
+        实验室管理系统
+        <div class="menu">
+            <ul>
+                <li><a href="">人员管理</a>
+                </li>
+                <li><a href="">设备管理</a>
+                    <ul>
+                        <li><a href="shebei/shebeixinxi.html">设备信息管理</a></li>
+                        <li><a href="shebei/sbjieyong.html">设备借用管理 </a></li>
+                        <li><a href="">设备维修管理</a></li>
+                    </ul>
+                </li>
+                <li><a href="">实践管理</a>
+                    <ul>
+                        <li><a href="">实践预约管理</a></li>
+                        <li><a href="">过程记录管理</a></li>
+                        <li><a href="">效果展示</a></li>
+                    </ul>
+                </li>
+                <li><a href="">信息交流</a>
+                    <ul>
+                        <li><a href="">信息发布</a></li>
+                        <li><a href="">讨论交流</a></li>
+                    </ul>
+                </li>
+                <li><a href="">视频监控</a></li>
+            </ul>
+        </div>
+        <div></div>
+    </div>
+
+
+</body>

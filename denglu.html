@@ -1,0 +1,77 @@
+<!Doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <title>实验室</title>
+    <script src="js/denglu.js"></script>
+    <style>
+        body {
+            background-image: url(images/background.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .denglu {
+            width: 50%;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 150px;
+            border-style: solid;
+            padding-top: 20px;
+            background-color: #98FB98;
+            opacity: 0.6;
+        }
+        
+        .denglu p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 25px;
+            color: green;
+            margin-left: 30px;
+            margin-top: -10px;
+        }
+        
+        .denglu .fenge {
+            height: 3px;
+            width: 95%;
+            background-color: #4EEE94;
+            margin: 0 auto;
+            margin-top: -20px;
+        }
+        
+        .denglu .word {
+            font-family: 14px;
+            margin-top: 20px;
+            margin-left: 150px;
+        }
+        
+        .denglu button {
+            width: 10%;
+            height: 30px;
+            background-color: white;
+        }
+        
+        .denglu .submit {
+            margin-left: 250px;
+            margin-top: 30px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="denglu">
+
+        <p>实验室管理系统</p>
+        <div class="fenge"></div>
+        <form>
+            <div class="word">账号:<input type="text" id="username" required /></div>
+            <div class="word">密码:<input type="password" id="password" required /></div>
+            <div style="height:20px;"></div>
+            <input id="adminster" type="radio" name="sel" style="margin-left:150px;" value="管理员" />管理员
+            <input id="staff" type="radio" name="sel" value="普通员工" />普通员工
+            <button class="submit" onclick="getAjax()">登录</button>
+            <button onclic="checkUsername()">注册</button>
+            <span id="msg" style="color:red"></span>
+        </form>
+    </div>
+</body>

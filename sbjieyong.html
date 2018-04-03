@@ -1,0 +1,257 @@
+<!Doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .content {
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 20px;
+            background-image: url(images/background.jpg);
+            background-size: 800px 300px;
+            padding: 30px;
+        }
+        
+        .jieyong {
+            margin-top: 3000px;
+        }
+        
+        .selector button {
+            width: 18%;
+            height: 50px;
+            margin-left: 30px;
+        }
+        
+        #jieyong,
+        #return,
+        #infor,
+        #gh {
+            display: none;
+        }
+        
+        #jieyong {
+            padding-left: 180px;
+        }
+        
+        #return {
+            padding-left: 100px;
+            margin-top: 30px;
+        }
+        
+        #return button {
+            margin-left: 60px;
+        }
+        
+        body {
+            padding: 0;
+            margin: 0;
+            background-image: url(images/background.jpg );
+        }
+        
+        .daohang {
+            width: 100%;
+            background-image: url(images/background.jpg);
+            font-family: FZShuTi;
+            font-size: 40px;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        .menu {
+            font-family: "黑体";
+            width: 100%;
+            /* margin-left: 2px; */
+            margin-top: -40px;
+        }
+        
+        .menu ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .menu ul li {
+            float: left;
+            position: relative;
+        }
+        
+        .menu ul li a,
+        .menu ul li a:visited {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            width: 250px;
+            height: 40px;
+            color: #000;
+            border: 1px solid #fff;
+            border-width: 1px 1px 0 0;
+            background: rgb(89, 202, 89);
+            line-height: 40px;
+            font-size: 14px;
+        }
+        
+        .menu ul li:hover a {
+            color: #fff;
+        }
+        
+        .menu ul li ul {
+            display: none;
+        }
+        
+        .menu ul li:hover ul {
+            display: block;
+            position: absolute;
+            top: 31px;
+            left: 0px;
+            width: 105px;
+        }
+        
+        menu ul li:hover ul li a {
+            display: block;
+            background: #ff4321;
+            color: #000;
+        }
+        
+        .menu ul li:hover ul li a:hover {
+            background: #dfc184;
+            color: #000;
+        }
+        
+        .jie {
+            margin-top: 80px;
+        }
+        
+        #jie {
+            margin-left: 400px;
+            margin-top: 30px;
+        }
+        
+        #info {
+            margin-left: 20%;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        #info td {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="daohang">
+        实验室管理系统
+        <div class="menu">
+            <ul>
+                <li><a href="">设备信息浏览</a>
+                </li>
+                <li><a href="sbjieyong.html">设备借用申请</a>
+
+                </li>
+                <li><a href="sjyuyue.html">实践活动预约</a>
+
+                </li>
+                <li><a href="">过程记录</a>
+
+                </li>
+                <li><a href="EditPsword.html">密码修改</a></li>
+            </ul>
+        </div>
+        <div></div>
+    </div>
+    <div class="jie">
+        <div class="selector">
+            <button id="jie">借用设备</button>
+            <button id="huan">归还设备</button></div>
+        <div class="content">
+            <div id="jieyong">
+                <p>申请单位：<input type="text" id="wplace" /></p>
+                <p>申请人:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="application" /></p>
+                <p>联系电话：<input type="text" id="number" /></p>
+                <p>具体用途：<input type="textera" /></p>
+                <p>器材名称：<input type="text" id="name" /></p>
+                <p>数量：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" id="number" /></p>
+                <p>备注：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="textera" /></p>
+                <p>借用时间：<input type="text" id="time" /> </p>
+                <button style="margin-left:50px;">提交</button>
+            </div>
+            <div id="return">
+                <p style="display:inline-block">申请人:<input type="text" id="application" width="20px;" /></p>
+                <button id="search">搜索</button>
+            </div>
+            <div id="infor">
+                <p style="font-weight:bold;">借用人：张三</p>
+                <table id="info" cellspacing="0" border="1px">
+                    <tr>
+                        <th>名称</th>
+                        <th>借用时间</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>天平</td>
+                        <td>2018.3.25</td>
+                        <td><button>归还</button></td>
+                    </tr>
+                    <tr>
+                        <td>天平架</td>
+                        <td>2018.3.25</td>
+                        <td><button>归还</button></td>
+                    </tr>
+                    <tr>
+                        <td>天平</td>
+                        <td>2018.3.25</td>
+                        <td><button style="background-color:rgb(2);">归还</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="gh">
+                <p>归还时间：<input type="text" /></p>
+                <input type="button" value="提交" style="margin-left:50px;" />
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var jieyong = document.getElementById('jie'); //借用按钮
+        var guihuan = document.getElementById('huan'); //归还按钮
+        var huan = document.getElementById('return'); //归还内容
+        var jy = document.getElementById('jieyong'); //借用内容
+        var infor = document.getElementById('infor');
+        var gh = document.getElementById('gh'); //填写归还时间
+        var but = infor.getElementsByTagName('button');
+        for (var i = 0; i < but.length; i++) {
+            but[i].onclick = function() {
+
+                huan.style.display = "none";
+                jy.style.display = "none";
+                infor.style.display = "none";
+                gh.style.display = "block";
+            }
+        }
+        jieyong.onclick = function() {
+            // alert(1);
+            huan.style.display = "none";
+            jy.style.display = "block";
+            infor.style.display = "none";
+            gh.style.display = "none";
+        }
+
+        guihuan.onclick = function() {
+            jy.style.display = "none";
+            huan.style.display = "block";
+            infor.style.display = "none";
+            gh.style.display = "none";
+        }
+        var search = document.getElementById('search');
+        search.onclick = function() {
+            jy.style.display = "none";
+            huan.style.display = "none";
+            infor.style.display = "block";
+            gh.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

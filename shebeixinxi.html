@@ -1,0 +1,241 @@
+<!Doctype html>
+
+<head>
+    <meta charset="utf-8">
+    <title>管理员</title>
+    <script type="text/javascript" src="shebeixinxi.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .daohang {
+            width: 100%;
+            background-image: url(images/background.jpg);
+            font-family: FZShuTi;
+            font-size: 40px;
+            text-align: center;
+            line-height: 100px;
+        }
+        
+        .menu {
+            font-family: "黑体";
+            width: 100%;
+            /* margin-left: 2px; */
+            margin-top: -40px;
+            /* position: fixed; */
+        }
+        
+        .menu ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .menu ul li {
+            float: left;
+            position: relative;
+        }
+        
+        .menu ul li a,
+        .menu ul li a:visited {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            width: 253px;
+            height: 40px;
+            color: #000;
+            border: 1px solid #fff;
+            border-width: 1px 1px 0 0;
+            background: rgb(89, 202, 89);
+            line-height: 40px;
+            font-size: 14px;
+        }
+        
+        .menu ul li:hover a {
+            color: #fff;
+        }
+        
+        .menu ul li ul {
+            display: none;
+        }
+        
+        .menu ul li:hover ul {
+            display: block;
+            position: absolute;
+            top: 31px;
+            left: 0px;
+            width: 105px;
+        }
+        
+        menu ul li:hover ul li a {
+            display: block;
+            background: #ff4321;
+            color: #000;
+        }
+        
+        .menu ul li:hover ul li a:hover {
+            background: #dfc184;
+            color: #000;
+        }
+        
+        .tianjia {
+            margin-left: 50px;
+            margin-top: 60px;
+        }
+        
+        .add {
+            margin-left: 500px;
+            margin-top: 300px;
+            width: 300px;
+            border-style: solid;
+            border-color: black;
+            background-color: rgba(15, 228, 51, 0.685);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            display: none;
+            padding-left: 50px;
+        }
+        
+        .add input {
+            width: 60px;
+        }
+        
+        caption {
+            font-size: 20px;
+            padding-bottom: 10px;
+            font-weight: 40;
+        }
+        
+        th,
+        tr {
+            width: 100px;
+            height: 40px;
+        }
+        
+        #mytable {
+            margin-left: 100px;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        #mytable td {
+            text-align: center;
+        }
+        
+        .edit img {
+            width: 20px;
+            margin-bottom: -3px;
+            margin-left: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="daohang">
+        实验室管理系统
+        <div class="menu">
+            <ul>
+                <li><a href="">人员管理</a>
+                </li>
+                <li><a href="">设备管理</a>
+                    <ul>
+                        <li><a href="shebeixinxi.html">设备信息管理</a></li>
+                        <li><a href="sbjieyong.html">设备借用管理 </a></li>
+                        <li><a href="">设备维修管理</a></li>
+                    </ul>
+                </li>
+                <li><a href="">实践管理</a>
+                    <ul>
+                        <li><a href="sjyuyue.html">实践预约管理</a></li>
+                        <li><a href="">过程记录管理</a></li>
+                        <li><a href="">效果展示</a></li>
+                    </ul>
+                </li>
+                <li><a href="">信息交流</a>
+                    <ul>
+                        <li><a href="">信息发布</a></li>
+                        <li><a href="">讨论交流</a></li>
+                    </ul>
+                </li>
+                <li><a href="">视频监控</a></li>
+            </ul>
+        </div>
+        <div></div>
+    </div>
+    <!-- 设备信息 -->
+    <button class="tianjia">添加设备信息</button>
+    <div class="add">
+        <form id="add">
+            <p>名称：<input id="name" name="name" required /></p>
+            <p>购买时间：<input id="time" required style="width:80px;" /></p>
+            <p>状态：<select id="state" required>
+            <option value="在库">在库</option>
+            <option value="借用">借用</option>
+        </select></p>
+            <p>种类：<select id="kinds" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select> </p>
+            <p>管理人：
+                <input id="adminster" type="text" / required></p>
+            <p> 单价:
+                <input id="price" type="text" required /></p>
+            <p> 数量：
+                <input id="number" type="text" required /></p>
+            <p> 存放位置：
+                <input id="location" type="text" required /></p>
+            <button id="sub" style="margin-left:30px;margin-bottom:10px;">确定</button>
+        </form>
+    </div>
+    <table id="mytable" cellspacing="0" summary="**实验室设备信息" border="1px" ;>
+        <caption>**实验室设备信息</caption>
+        <tr>
+            <th scope="col">编号</th>
+            <th scope="col">名称</th>
+            <th scope="col">购买时间</th>
+            <th scope="col">状态</th>
+            <th scope="col">类别</th>
+            <th scope="col">管理人</th>
+            <th scope="col">单价</th>
+            <th scope="col">数量</th>
+            <th scope="col">存放位置</th>
+            <th class="edit"></th>
+        </tr>
+        <!-- <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="edit">
+                <button>编辑</button>
+                <img src="images/delete.jpg" />
+            </td>
+
+        </tr>
+     -->
+    </table>
+    <script>
+        var form = document.getElementsByClassName('add');
+        var button = document.getElementsByTagName('button');
+        var mytable = document.getElementById('mytable');
+        button[0].onclick = function() {
+            form[0].style.display = "block";
+            mytable.style.opacity = "0.5";
+
+        }
+
+        var sub = document.getElementById('sub');
+        sub.onclick = Add;
+    </script>
+</body>
+
+</head>
